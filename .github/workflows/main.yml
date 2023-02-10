@@ -2,7 +2,7 @@ name: Weather Telegram Bot
  
 on:
   schedule:
-    - cron: "0* * * *"  # Every Hour
+    - cron: "0 * * * *"  # Every Hour
   push:
     branches:
       - main
