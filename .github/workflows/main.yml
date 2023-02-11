@@ -25,8 +25,10 @@ jobs:
           pip install -r requirements.txt
       - name: Update Weather Information
         env:
-          API_KEY: ${{ secrets.API_KEY }} 
-          CHAT_ID: ${{ secrets.CHAT_ID }}
+          TAMP_API_KEY: ${{ secrets.TAMP_API_KEY }} 
+          TAMP_CHAT_ID: ${{ secrets.TAMP_CHAT_ID }}
+          BP_API_KEY: ${{ secrets.BP_API_KEY }} 
+          BP_CHAT_ID: ${{ secrets.BP_CHAT_ID }}
         run: |
           python src/tamp_weather_bot.py
           python src/bp_weather_bot.py
