@@ -24,15 +24,15 @@ def send_message():
 
     if (status == "Light Showers" or status == "Showers"):
         image_path = "https://raw.githubusercontent.com/Joanna-Khek/weather-telegram-bot/main/images/light_shower.png"
-        msg = date + "\n" + time_period + "\n" + "*Bukit Panjang*" + "\n" + '会下雨' + "\n" + f' {status}'
+        msg = date + "\n" + time_period + "\n" + "*Bukit Panjang*" + "\n" + '会下雨' + "\n" + f'{status}'
         bot.send_photo(chat_id=BP_CHAT_ID, photo=image_path, caption=msg, parse_mode=telegram.ParseMode.MARKDOWN)
     elif 'Thundery Showers' in status:
         image_path = "https://raw.githubusercontent.com/Joanna-Khek/weather-telegram-bot/main/images/thundery_shower.png"
-        msg = date + "\n" + time_period + "\n" + "*Bukit Panjang*" + "\n" +'会下大雨' + "\n" + f' {status}'
+        msg = date + "\n" + time_period + "\n" + "*Bukit Panjang*" + "\n" +'会下大雨' + "\n" + f'{status}'
         bot.send_photo(chat_id=BP_CHAT_ID, photo=image_path, caption=msg, parse_mode=telegram.ParseMode.MARKDOWN)
     elif status == "Light Rain":
         image_path = "https://raw.githubusercontent.com/Joanna-Khek/weather-telegram-bot/main/images/light_rain.png"
-        msg = date + "\n" + time_period + "\n" + "*Bukit Panjang*" + "\n" +'会下小雨' + "\n" + f' {status}'
+        msg = date + "\n" + time_period + "\n" + "*Bukit Panjang*" + "\n" +'会下小雨' + "\n" + f'{status}'
         bot.send_photo(chat_id=BP_CHAT_ID, photo=image_path, caption=msg, parse_mode=telegram.ParseMode.MARKDOWN)
 
 # filter

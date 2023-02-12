@@ -17,7 +17,7 @@ TAMP_API_KEY = os.environ['TAMP_API_KEY']
 TAMP_CHAT_ID = os.environ['TAMP_CHAT_ID']
 
 
-def send_message():
+def send_message(forecasts, timestamp, valid_period_start, valid_period_end, status ):
     date = f'*{pd.to_datetime(timestamp).date()}*'
     start_time = pd.to_datetime(valid_period_start).strftime('%I:%M %p')
     end_time = pd.to_datetime(valid_period_end).strftime('%I:%M %p')
@@ -25,15 +25,15 @@ def send_message():
 
     if (status == "Light Showers" or status == "Showers"):
         image_path = "https://raw.githubusercontent.com/Joanna-Khek/weather-telegram-bot/main/images/light_shower.png"
-        msg = date + "\n" + time_period + "\n" + "*Tampines*" + "\n" + '会下雨' + "\n" + f' {status}'
+        msg = date + "\n" + time_period + "\n" + "*Tampines*" + "\n" + '会下雨' + "\n" + f'{status}'
         bot.send_photo(chat_id=TAMP_CHAT_ID, photo=image_path, caption=msg, parse_mode=telegram.ParseMode.MARKDOWN)
     elif 'Thundery Showers' in status:
         image_path = "https://raw.githubusercontent.com/Joanna-Khek/weather-telegram-bot/main/images/thundery_shower.png"
-        msg = date + "\n" + time_period + "\n" + "*Tampines*" + "\n" + '会下大雨' + "\n" + f' {status}'
+        msg = date + "\n" + time_period + "\n" + "*Tampines*" + "\n" + '会下大雨' + "\n" + f'{status}'
         bot.send_photo(chat_id=TAMP_CHAT_ID, photo=image_path, caption=msg, parse_mode=telegram.ParseMode.MARKDOWN)
     elif status == "Light Rain":
         image_path = "https://raw.githubusercontent.com/Joanna-Khek/weather-telegram-bot/main/images/light_rain.png"
-        msg = date + "\n" + time_period + "\n" + "*Tampines*" + "\n" + '会下小雨' + "\n" + f' {status}'
+        msg = date + "\n" + time_period + "\n" + "*Tampines*" + "\n" + '会下小雨' + "\n" + f'{status}'
         bot.send_photo(chat_id=TAMP_CHAT_ID, photo=image_path, caption=msg, parse_mode=telegram.ParseMode.MARKDOWN)
 
 # filter
