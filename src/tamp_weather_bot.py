@@ -17,7 +17,7 @@ TAMP_API_KEY = os.environ['TAMP_API_KEY']
 TAMP_CHAT_ID = os.environ['TAMP_CHAT_ID']
 
 
-def send_message(forecasts, timestamp, valid_period_start, valid_period_end, status ):
+def send_message():
     date = f'*{pd.to_datetime(timestamp).date()}*'
     start_time = pd.to_datetime(valid_period_start).strftime('%I:%M %p')
     end_time = pd.to_datetime(valid_period_end).strftime('%I:%M %p')
