@@ -24,7 +24,7 @@ def send_message():
     end_time = pd.to_datetime(valid_period_end).strftime('%I:%M %p')
     time_period = f'*{start_time} 到 {end_time}*'
 
-    if (status == "Light Showers" | status == "Showers"):
+    if (status == "Light Showers" or status == "Showers"):
         image_path = open("../images/light_shower.png", "rb")
         msg = date + "\n" + time_period + "\n" + '会下雨' + "\n" + f' {status}'
         bot.send_photo(chat_id=TAMP_CHAT_ID, photo=image_path, caption=msg, parse_mode=telegram.ParseMode.MARKDOWN)
