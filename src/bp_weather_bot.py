@@ -2,8 +2,6 @@ from api import Data
 import pandas as pd
 import telegram
 import os
-from io import BytesIO
-from PIL import Image
 
 url = "https://api.data.gov.sg/v1/environment/2-hour-weather-forecast"
 api = Data(url)
